@@ -1,0 +1,4 @@
+llm:
+  endpoint: "http://127.0.0.1:9000/generate"
+  model: "mistral-7b-instruct"
+
