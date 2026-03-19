@@ -1,0 +1,28 @@
+# Avalon Decision Engine — Default Micro-Policy
+# © AetherMind S.I.C LLC | Project Avalon
+
+engine:
+  initial_state: "Ø"
+  max_clarification_attempts: 2
+  verbose: true
+
+# Transition table (reference — enforced in code)
+transitions:
+  A:  [Ø, U, T]
+  B:  [Ø, U, T]
+  Ø:  [A, B, U, T]
+  U:  [-A, -B, T]
+  -A: [T, C]
+  -B: [T, C]
+  T:  [C, Ø]
+  C:  [A, B]
+
+# Zone self-resolution defaults
+zone_defaults:
+  ambiguity: "Ø"   # suspend if cannot resolve
+  boundary:  "T"   # escalate if at domain boundary
+
+# Intent classification keywords (used by intent parser)
+intent_keywords:
+  affirm:  [allow, permit, open, approve, activate, proceed]
+  counter: [deny, block, kill, reject, terminate, deactivate]
