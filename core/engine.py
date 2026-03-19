@@ -73,13 +73,13 @@ class AvalonEngine:
         if intent.get("reframe") and self.state == State.T:
             self._transition(State.C, reason="reframe: entering context shift")
             # C resolves back to A or B based on original action
-            action = intent.get("action", "").lower()
+            action = (intent.get("action") or "").lower()
             final = State.A if action in ("allow", "permit", "open", "approve", "activate", "proceed") else State.B
             self._transition(final, reason="reframe complete: returning to operational state")
 
         # misclassified: U -> -A or -B
         elif intent.get("misclassified") and self.state == State.U:
-            action = intent.get("action", "").lower()
+            action = (intent.get("action") or "").lower()
             neg = State.NEG_A if action in ("allow", "permit", "open") else State.NEG_B
             self._transition(neg, reason="misclassified: domain negation")
             self._transition(State.T, reason="domain negation: escalating to transcendence")
@@ -120,8 +120,8 @@ class AvalonEngine:
         Respects the transition table — if a direct jump is invalid,
         routes through a valid intermediate state.
         """
-        action = intent.get("action", "").lower()
-        trust  = intent.get("trust", "unknown").lower()
+        action = (intent.get("action") or "").lower()
+        trust  = (intent.get("trust") or "unknown").lower()
         contradiction = intent.get("contradiction", False)
         misclassified = intent.get("misclassified", False)
         escalate      = intent.get("escalate", False)

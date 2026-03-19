@@ -15,16 +15,16 @@ This is not a toy. It is a governance kernel — a decision layer that can sit b
 
 ## The Eight States
 
-| State | Name | Behavior |
-|-------|------|----------|
-| A | Affirm | Allow / proceed / approve / activate |
-| B | Counter-Affirm | Deny / block / terminate / reject |
-| Ø | Nil/Void | Suspend — insufficient context |
-| U | Unity | Dual integration — sandbox / rate-limit / conditional |
-| -A | Outside-A | Request misclassified — not an allow-domain decision |
-| -B | Outside-B | Request misclassified — not a deny-domain decision |
-| T | Transcendence | Escalate — safe mode / human handoff / constitutional rule |
-| C | Context Shift | Full domain replacement — reframe the objective |
+| State | Name           | Behavior                                                    |
+|-------|----------------|-------------------------------------------------------------|
+| A     | Affirm         | Allow / proceed / approve / activate                        |
+| B     | Counter-Affirm | Deny / block / terminate / reject                           |
+| Ø     | Nil/Void       | Suspend — insufficient context                              |
+| U     | Unity          | Dual integration — sandbox / rate-limit / conditional       |
+| -A    | Outside-A      | Request misclassified — not an allow-domain decision        |
+| -B    | Outside-B      | Request misclassified — not a deny-domain decision          |
+| T     | Transcendence  | Escalate — safe mode / human handoff / constitutional rule  |
+| C     | Context Shift  | Full domain replacement — reframe the objective             |
 
 ## The Two Indeterminate Zones
 
